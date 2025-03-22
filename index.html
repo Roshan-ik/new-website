@@ -1,0 +1,1113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graphic Design Website</title>
+    <style>
+        /* Reset and Base Styles */
+        :root {
+    --primary-dark: #1a1a1a;
+    --primary-light: #f5f3f0;  /* Beige/cream background */
+    --accent-color: #e74c3c;   /* Red/coral accent */
+    --text-dark: #333333;
+    --text-light: #ffffff;
+    --text-muted: #777777;
+    --card-bg: #ffffff;
+    --section-bg: #f5f3f0;
+}
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: var(--primary-light);
+    color: var(--text-dark);
+    overflow-x: hidden;
+}
+
+/* Navigation */
+nav {
+    background-color: var(--primary-dark);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    color: var(--text-light);
+    font-weight: bold;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: #aaa;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--text-light);
+}
+
+.buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn {
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: var(--accent-color);
+    color: var(--text-light);
+    border: none;
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--text-light);
+    border: 1px solid #666;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Side Navigation */
+.side-nav {
+    position: fixed;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+    margin-left: 20px;
+}
+
+.side-nav-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: all 0.3s ease;
+}
+
+.side-nav-item:hover {
+    opacity: 1;
+}
+
+.side-nav-item .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--text-dark);
+    margin-right: 10px;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    min-height: 80vh;
+    background-color: var(--primary-dark);
+    position: relative;
+    overflow: hidden;
+    background-image: url(https://i.postimg.cc/vB3JgBmc/DALL-E-2025-03-22-09-09-19-A-sleek-modern-laptop-and-a-smartphone-placed-on-a-stylish-desk-both-d.webp);
+}
+
+.hero-content {
+    padding: 4rem;
+    width: 50%;
+    color: var(--text-light);
+    position: relative;
+    z-index: 2;
+}
+
+.hero-content h1 {
+    font-size: 5rem;
+    line-height: 1;
+    margin-bottom: 1rem;
+    opacity: 0;
+    animation: fadeUp 1s ease forwards;
+}
+
+.hero-text {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    opacity: 0.7;
+    max-width: 80%;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    opacity: 0;
+    animation: fadeUp 1s ease forwards 0.3s;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+    opacity: 0;
+    animation: fadeUp 1s ease forwards 0.6s;
+}
+
+.hero-image {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.device-mockup {
+    position: relative;
+    width: 90%;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards 0.8s;
+}
+
+.laptop {
+    width: 100%;
+    height: auto;
+    position: relative;
+    z-index: 2;
+}
+
+.phone {
+    position: absolute;
+    right: -50px;
+    bottom: 50px;
+    width: 25%;
+    height: auto;
+    z-index: 3;
+    animation: floatAnimation 4s ease-in-out infinite;
+}
+
+.plant {
+    position: absolute;
+    right: 30px;
+    bottom: 0;
+    width: 120px;
+    z-index: 1;
+}
+
+/* Services Section */
+.services {
+    padding: 4rem;
+    background-color: var(--section-bg);
+    overflow: visible; /* Ensure all items are shown */
+
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+    opacity: 0;
+    animation: fadeUp 1s ease forwards;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Adjust to fit 5 items better */
+    gap: 2rem;
+}
+
+.service-card {
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.service-card:nth-child(1) { animation: fadeUp 0.6s ease forwards 0.2s; }
+.service-card:nth-child(2) { animation: fadeUp 0.6s ease forwards 0.4s; }
+.service-card:nth-child(3) { animation: fadeUp 0.6s ease forwards 0.6s; }
+.service-card:nth-child(4) { animation: fadeUp 0.6s ease forwards 0.8s; }
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.service-icon {
+    width: 100%;
+    height: 180px;
+    background-color: #f8f8f8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.service-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.5s ease;
+}
+
+.service-card:hover .service-icon img {
+    transform: scale(1.1);
+}
+
+.service-content {
+    padding: 1.5rem;
+}
+
+.service-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+}
+
+.service-description {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+}
+
+/* More Services Section */
+.more-services {
+    padding: 4rem;
+    background-color: var(--section-bg);
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.gallery-item {
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.gallery-item:nth-child(1) { animation: fadeUp 0.6s ease forwards 0.2s; }
+.gallery-item:nth-child(2) { animation: fadeUp 0.6s ease forwards 0.4s; }
+.gallery-item:nth-child(3) { animation: fadeUp 0.6s ease forwards 0.6s; }
+.gallery-item:nth-child(4) { animation: fadeUp 0.6s ease forwards 0.8s; }
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.5s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+/* About Section */
+.about {
+    padding: 4rem;
+    background-color: var(--card-bg);
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+}
+
+.about-image {
+    width: 40%;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateX(-30px);
+    animation: fadeRight 1s ease forwards 0.3s;
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.about-content {
+    width: 60%;
+}
+
+.about-title {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    animation: fadeUp 1s ease forwards 0.2s;
+}
+
+.about-text {
+    line-height: 1.8;
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+    opacity: 0;
+    animation: fadeUp 1s ease forwards 0.4s;
+}
+
+.about-stats {
+    display: flex;
+    gap: 2rem;
+    opacity: 0;
+    animation: fadeUp 1s ease forwards 0.6s;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    color: var(--text-muted);
+}
+
+/* Contact Section */
+.contact {
+    padding: 4rem;
+    background-color: var(--section-bg);
+    display: flex;
+    align-items: stretch;
+    gap: 4rem;
+}
+
+.contact-form {
+    flex: 1;
+    background-color: var(--card-bg);
+    padding: 3rem;
+    border-radius: 10px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    animation: fadeUp 1s ease forwards 0.2s;
+}
+
+.contact-title {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+input:focus, textarea:focus {
+    border-color: var(--accent-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.1);
+}
+
+textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.contact-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    opacity: 0;
+    animation: fadeUp 1s ease forwards 0.4s;
+}
+
+.contact-info-title {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+}
+
+.contact-icon {
+    width: 50px;
+    height: 50px;
+    background-color: rgba(231, 76, 60, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent-color);
+    margin-right: 1rem;
+    font-size: 1.5rem;
+}
+
+.contact-text {
+    flex: 1;
+}
+
+.contact-label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.contact-value {
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary-dark);
+    color: var(--text-muted);
+    padding: 2rem 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-logo {
+    color: var(--text-light);
+    font-weight: bold;
+}
+
+.footer-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.footer-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--text-light);
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-light);
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    background-color: var(--accent-color);
+    transform: translateY(-3px);
+}
+
+/* Mobile Menu */
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--text-light);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    z-index: 1001;
+    padding: 2rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.mobile-menu.active {
+    display: flex;
+}
+
+.close-menu {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: var(--text-light);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.mobile-menu a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-size: 1.5rem;
+    margin: 1rem 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Keep existing animations and media queries */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes floatAnimation {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+@keyframes fadeRight {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Media queries remain unchanged */
+@media screen and (max-width: 1200px) {
+    .hero-content h1 {
+        font-size: 4rem;
+    }
+    .services-grid, .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .hero {
+        flex-direction: column;
+    }
+    .hero-content, .hero-image {
+        width: 100%;
+        padding: 2rem;
+    }
+    .hero-content {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .hero-text {
+        max-width: 100%;
+    }
+    .device-mockup {
+        width: 80%;
+        margin: 0 auto;
+        margin-top: 2rem;
+    }
+    .about, .contact {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .about-image, .about-content, .contact-form, .contact-info {
+        width: 100%;
+    }
+    .about {
+        padding: 2rem;
+    }
+    .services, .more-services {
+        padding: 2rem;
+    }
+    .contact {
+        padding: 2rem;
+    }
+    footer {
+        padding: 2rem;
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+    .footer-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .social-links {
+        margin-top: 1rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .nav-links, .buttons {
+        display: none;
+    }
+    .mobile-menu-btn {
+        display: block;
+    }
+    .services-grid, .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+    .section-title {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+    .about-title, .contact-title, .contact-info-title {
+        font-size: 2rem;
+        text-align: center;
+    }
+    .about-stats {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .side-nav {
+        display: none;
+    }
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+    .hero-buttons .btn {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+    .phone {
+        right: -20px;
+        bottom: 20px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .hero-content {
+        padding: 1.5rem;
+    }
+    .services, .more-services, .about, .contact {
+        padding: 1.5rem;
+    }
+    .contact-form {
+        padding: 1.5rem;
+    }
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+}
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">ANISH JAISWAR</div>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#about">About Us</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact Us</a>
+        </div>
+        <div class="buttons">
+            <a href="#portfolio" class="btn btn-primary">Projects</a>
+        </div>
+        <button class="mobile-menu-btn">☰</button>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <button class="close-menu">✕</button>
+        <a href="#home">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact Us</a>
+    </div>
+
+    <!-- Side Navigation -->
+    <div class="side-nav">
+        <div class="side-nav-item">
+            <div class="dot"></div>
+        </div>
+        <div class="side-nav-item">
+            <div class="dot"></div>
+        </div>
+        <div class="side-nav-item">
+            <div class="dot"></div>
+        </div>
+        <div class="side-nav-item">
+            <div class="dot"></div>
+        </div>
+        <div class="side-nav-item">
+            <div class="dot"></div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1 >GRAPHIC<br>DESIGN<br>WEBSITE</h1>
+            <p class="hero-text" style="font-size: 25px;">Creating stunning visual experiences that elevate your brand and captivate your audience. We blend creativity with strategy to deliver designs that make an impact.</p>
+            <div class="hero-buttons">
+                <a href="#portfolio" class="btn btn-primary">Projects</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <div class="device-mockup">
+                <img src="" alt="Laptop mockup" class="laptop">
+                <img src="/api/placeholder/100/200" alt="Phone mockup" class="phone">
+                <img src="/api/placeholder/120/200" alt="Plant decoration" class="plant">
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <h2 class="section-title">SERVICES OFFERED</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">
+                    <img src="https://i.postimg.cc/nV73srwr/DALL-E-2025-03-22-10-14-16-A-modern-digital-concept-representing-branding-The-image-features-a-wo.webp" alt="Videography Service">
+                </div>
+                <div class="service-content">
+                    <h3 class="service-title">Branding</h3>
+                    <p class="service-description">Build a powerful brand identity with stunning visuals and strategic design. Elevate your presence with professional branding that captures attention and leaves a lasting impact.</p>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <img src="https://i.postimg.cc/RVHXHFsq/DALL-E-2025-03-22-10-13-04-A-creative-digital-concept-representing-professional-video-editing-The.webp" alt="Videography Service">
+                </div>
+                <div class="service-content">
+                    <h3 class="service-title">Videography</h3>
+                    <p class="service-description">Dynamic video content that brings your brand to life and creates immersive experiences for your audience.</p>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <img src="https://i.postimg.cc/LsKd1w3F/DALL-E-2025-03-22-10-07-01-A-visually-appealing-digital-concept-showcasing-Instagram-monetization.webp" alt="Photography Service">
+                </div>
+                <div class="service-content">
+                    <h3 class="service-title">Instagram Montization</h3>
+                    <p class="service-description">Maximize your Instagram presence with professional photography services that enhance your brand, boost engagement, and drive monetization.</p>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <img src="https://i.postimg.cc/QMb6dy6b/DALL-E-2025-03-22-10-11-48-A-dynamic-digital-concept-representing-You-Tube-monetization-The-image.webp" alt="Content Creation Service">
+                </div>
+                <div class="service-content">
+                    <h3 class="service-title">Youtube Monitization</h3>
+                    <p class="service-description">Unlock the power of YouTube monetization with high-quality content that drives views, engagement, and revenue growth. Elevate your channel with professional visuals and strategic branding.</p>
+                </div>
+            </div>
+      
+        </div>
+    </section>
+
+   
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="about-image">
+            <img src="/api/placeholder/500/400" alt="About Us">
+        </div>
+        <div class="about-content">
+            <h2 class="about-title">About Us</h2>
+            <p class="about-text">I am a creative professional dedicated to delivering exceptional graphic design solutions that help businesses stand out in today's competitive market. With over 2 years of experience, I combine artistic vision with strategic thinking to create designs that not only look amazing but also drive results.</p>
+            <p class="about-text">Whether you need branding, web design, print materials, or social media content, I have the expertise to bring your vision to life. I believe in building strong client relationships, taking the time to understand your unique needs and objectives.</p>
+            <div class="about-stats">
+                <div class="stat-item">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Completed Projects</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">20+</div>
+                    <div class="stat-label">Happy Clients</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">2+</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="contact-info">
+            <h2 class="contact-info-title">Contact Information</h2>
+            <div class="contact-item">
+                <div class="contact-icon">📍</div>
+                <div class="contact-text">
+                    <div class="contact-label">Our Location</div>
+                    <div class="contact-value">Ghansoli Sec 21 ,Navi Mumbai 400701</div>
+                </div>
+            </div>
+            <div class="contact-item">
+                <div class="contact-icon">📞</div>
+                <div class="contact-text">
+                    <div class="contact-label">Phone Number</div>
+                    <div class="contact-value">+91 9209678228</div>
+                </div>
+            </div>
+            <div class="contact-item">
+                <div class="contact-icon">✉️</div>
+                <div class="contact-text">
+                    <div class="contact-label">Email Address</div>
+                    <div class="contact-value">jaiswaranish333@gmail.com</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-logo">ANISH JAISWAR</div>
+        <div class="footer-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <div class="social-links">
+            <a href="https://www.instagram.com/anishhhhhhh2151" class="social-icon" target="_blank">IG</a>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        // Mobile Menu Toggle
+document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const closeMenuBtn = document.querySelector('.close-menu');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const mobileMenuLinks = document.querySelectorAll('.mobile-menu a');
+    
+    mobileMenuBtn.addEventListener('click', function() {
+        mobileMenu.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    });
+    
+    closeMenuBtn.addEventListener('click', function() {
+        mobileMenu.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    });
+    
+    mobileMenuLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+    });
+    
+    // Side Navigation Functionality
+    const sideNavItems = document.querySelectorAll('.side-nav-item');
+    const sections = document.querySelectorAll('section');
+    
+    window.addEventListener('scroll', function() {
+        let current = '';
+        
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            if(pageYOffset >= (sectionTop - sectionHeight/3)) {
+                current = section.getAttribute('id');
+            }
+        });
+        
+        sideNavItems.forEach((item, index) => {
+            item.classList.remove('active');
+            if(index === Array.from(sections).findIndex(section => section.getAttribute('id') === current)) {
+                item.classList.add('active');
+            }
+        });
+    });
+    
+    // Smooth Scrolling for Navigation Links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            if(targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if(targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+    
+    // Animation on Scroll
+    function animateOnScroll() {
+        const elements = document.querySelectorAll('.service-card, .gallery-item, .about-image, .about-content, .contact-form, .contact-info');
+        
+        elements.forEach(element => {
+            const elementPosition = element.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
+            
+            if(elementPosition < windowHeight - 100) {
+                element.style.opacity = '1';
+                element.style.transform = 'translateY(0)';
+            }
+        });
+    }
+    
+    window.addEventListener('scroll', animateOnScroll);
+    animateOnScroll(); // Initial check on page load
+    
+    // Add active class to side navigation on scroll
+    function updateSideNav() {
+        const scrollPosition = window.scrollY;
+        
+        sections.forEach((section, index) => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            
+            if(scrollPosition >= sectionTop - 100 && scrollPosition < sectionTop + sectionHeight - 100) {
+                sideNavItems.forEach(item => item.classList.remove('active'));
+                if(sideNavItems[index]) {
+                    sideNavItems[index].classList.add('active');
+                }
+            }
+        });
+    }
+    
+    window.addEventListener('scroll', updateSideNav);
+    updateSideNav(); // Initial check
+    
+    // Form Validation
+    const contactForm = document.querySelector('.contact-form form');
+    if(contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const nameInput = document.getElementById('name');
+            const emailInput = document.getElementById('email');
+            const subjectInput = document.getElementById('subject');
+            const messageInput = document.getElementById('message');
+            
+            let isValid = true;
+            
+            if(!nameInput.value.trim()) {
+                nameInput.style.borderColor = '#e74c3c';
+                isValid = false;
+            } else {
+                nameInput.style.borderColor = '#ddd';
+            }
+            
+            if(!emailInput.value.trim() || !validateEmail(emailInput.value)) {
+                emailInput.style.borderColor = '#e74c3c';
+                isValid = false;
+            } else {
+                emailInput.style.borderColor = '#ddd';
+            }
+            
+            if(!subjectInput.value.trim()) {
+                subjectInput.style.borderColor = '#e74c3c';
+                isValid = false;
+            } else {
+                subjectInput.style.borderColor = '#ddd';
+            }
+            
+            if(!messageInput.value.trim()) {
+                messageInput.style.borderColor = '#e74c3c';
+                isValid = false;
+            } else {
+                messageInput.style.borderColor = '#ddd';
+            }
+            
+            if(isValid) {
+                // Here you would typically send the form data to a server
+                alert('Message sent successfully!');
+                contactForm.reset();
+            }
+        });
+    }
+    
+    function validateEmail(email) {
+        const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(String(email).toLowerCase());
+    }
+});
